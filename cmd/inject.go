@@ -24,6 +24,8 @@ var injectCmd = &cobra.Command{
 		switch faultType {
 		case "cpu":
 			return faults.InjectCPU(vmName, duration)
+		case "mem":
+			return faults.InjectMem(vmName, duration)
 		default:
 			return fmt.Errorf("unknown fault type: %s", faultType)
 		}
